@@ -135,3 +135,102 @@ Much of this material was review for me. I already know a lot about swift and a 
 In general, I like Paul, love his dogs, and his teaching style.
 
 Bigger issue I think I'm going to have is sticking with it when I get bored. Too much review.
+
+# Day 1
+
+Why Swift?
+
+- It's new and doesnt have cruft of old languages.
+- It is the best way to write iOS apps.
+
+How to follow along
+
+- Try to execute the code so you can really understand what is going on.
+- Need XCode 13 or later
+- Learning swift through Playgrounds (MacOS blank)
+- Do follow along
+
+Variables and Constants
+
+- Variables change over time.
+- `var` means create a new variable
+- I'm not going over the details of the following:
+
+```swift
+import Cocoa
+var greeting = "Hello, playground"
+```
+
+- semicolons are only required to put two lines of code on the same line.
+- Constants are defined with `let`
+- Swift will error if you try to change a constant
+- `let` comes from math proofs
+- Variables names can be named pretty much whatever you want.
+- Standard amongst Swift Developers, camel case is the standard, eg `playerName`
+- Prefer to use constants over variables if you can.
+
+How To Create Strings
+
+- Strings start and end with double quotes.
+- Can contain punctuation and emojis.
+- To use double quotes in strings, use a backslash like `"Swift string \"with quotes\""`
+
+```swift
+let movie = """
+A day in
+the life of an
+Apple Engineer
+"""
+```
+
+- Multi line strings must start with """ on their own lines.
+- Strings are class and you can run things like `count` which returns the number of characters in the string.
+- You can also call functions on string objects like `.toUpperCase()` on a string. Other examples `hasPrefix("foo")` or `hasSuffix("bar")`
+
+How to store whole numbers?
+
+- created with let or var.
+- Can create really big numbers with underscores for readability:
+
+```swift
+let reallyBig = 100_000_000
+```
+
+- Can also create them with operators
+- Compound assignment equal operators like `+=`
+- have functions like `isMultipleOf()`
+
+```swift
+let reallyBig = 100_000_000
+let score = 10
+let lowerScore = 10-2
+let halfScore = score / 2
+
+var counter = 10
+counter = counter + 5
+counter += 5
+print(counter)
+
+print(120.isMultiple(of: 3))
+```
+
+How to store decimal numbers
+
+- called floating point number. Comes from the way computers store these numbers. Decimal point is moved around for the number.
+- Can be confusing:
+
+```swift
+let number = 0.1 + 0.2
+print(number) // => "0.30000000000000004\n"
+```
+
+- Ints are 100% accurate
+- Decimals always a decimal point in their definition. Without a decimal it is an Int.
+- Once a variable is assigned a type it must remain that type.
+- Swift lets us use `Double` and `CGFloat` interchangeably.
+
+### Debrief
+
+Today was mostly a review for me. A couple of small details were details that I had forgotten. I haven't seen a bunch of multiline strings so the """ thing was interesting. I forgot about the use of underscores for readability on large numbers.
+
+On the website, it was unclear where one day ended and the next began, so I started Day 2 without meaning to. I will pay closer attention on the next day.
