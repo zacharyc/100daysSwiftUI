@@ -234,3 +234,162 @@ print(number) // => "0.30000000000000004\n"
 Today was mostly a review for me. A couple of small details were details that I had forgotten. I haven't seen a bunch of multiline strings so the """ thing was interesting. I forgot about the use of underscores for readability on large numbers.
 
 On the website, it was unclear where one day ended and the next began, so I started Day 2 without meaning to. I will pay closer attention on the next day.
+
+# Day 2
+
+How to store truth with Booleans
+
+- Storing truth in variables
+- We've seen it in things like `isMultipelOf()`
+- Assigned to either true or false.
+- Has a few methods of not, which is a ! at the beginning.
+- Also has method `.toggle()`
+
+How to join strings together
+
+- join with `+`, can do with multiple strings.
+- The plus operator is overloaded for strings
+- Swift does linear adding so things like "1" + "2" + "3" => "12" + "3" => "123" which is inefficient.
+- Going over string interpolation ` "five * five is \(5*5)"`
+
+Summary: Sample data.
+
+- use let as much as possible.
+- Swift strings can be short or long
+- Swift strings have methods like count
+- Reviewing types, Int, Double, Bool
+- String interpolation
+
+Checkpoint 1: creating a swift temperature converter
+
+full disclosure, I can't spell:
+
+```swift
+var celciusTemp = 10.0
+var fTemp = celciusTemp * 9.0 / 5.0 + 32.0
+print("Celcius: \(celciusTemp) is \(fTemp) in Farenhieght")
+```
+
+# Day 3
+
+Complex Data Types
+
+How to store data in arrays
+
+- collections of data zero indexed.
+- only allows like data in the array
+- Swift knows the type of the array.
+- Enforces **Type safety**.
+
+```swift
+var scores = Array<Int>()
+
+scores.append(100)
+scores.append(80)
+scores.append(85)
+
+print(scores[1])
+```
+
+- use angle brackets to specify type.
+- `()` invokes constructor, can be used to specify size.
+
+```swift
+var albums = Array<String>()
+albums.append("Folklore")
+albums.append("Fearless")
+albums.append("Red")
+
+// Shorthand for defining an array.
+var albums2 = [String]()
+
+var albumsShort = ["Folklore"]
+albumsShort.append("Fearless")
+albumsShort.append("Red")
+```
+
+- Methods: remove(at:) and removeAll(). Goes over contains(). Sorted
+
+```swift
+let cities = ["London", "Tokyo", "Rome", "Budapest"]
+print(cities.sorted())
+
+let presidents = ["Bush", "Obama", "Trump", "Biden"]
+let reversedPresidents = presidents.reversed()
+print(reversedPresidents) // Returns a reversed array
+```
+
+How to Store and find data in dictionaries
+
+- Dictionaries allow you to associate keys with values.
+- Arrays use indexes, Dictionaries use keys
+
+```swift
+let employee2 = [
+    "name": "taylor swift",
+    "job": "singer",
+    "location": "Nashville"
+]
+
+print(employee2["name"])
+print(employee2["password"])
+```
+
+- covering optionals as return types, because password doesn't exist.
+- Can provide default values `employee["name", defualt "foo"]`
+- Can override keys by redefining them
+
+How to use Sets for fast data lookup
+
+- Sets are like arrays but don't care about order and don't allow duplicates
+- Don't contain duplicate elements.
+- you insert, don't append. Arrays don't have order.
+- No duplicates allowed might be what you need.
+- Sets store their data in highly optimized structure so they are faster to search through.
+- the sorted() function returns an array because sets don't have order.
+
+How to create and use enums
+
+- set of named values
+- can be used to create type safety.
+
+```swift
+enum Weekday {
+    case Monday
+    case Tuesday
+    case Wednesday
+    case Thursday
+    case Friday
+}
+
+var day = Weekday.Monday
+day = Weekday.Friday
+day = .Thursday
+
+print(day)
+```
+
+# Day 4
+
+How to use Type Annotations
+
+- used when you want override a default, or belay assigning a value.
+- We have been using type inference `let surname = "lasso"` (will infer type String)
+- Can be specific with `let surname : String = "Lasso"`
+
+Summary: Complex Data
+
+- Arrays store many values in one place (index starting at 0)
+  - one type only
+  - helpful functionality
+- Dictionaries store many values by key
+  - only one type for key and one type for value
+- Sets store values in one place
+  - don't choose order
+- Enums create our types
+- Swift uses type inference to figure out what we are storing
+- It is also possible to use type annotation to force a particular type.
+
+Checkpoint 2:
+
+My solutions is slightly different than Pauls. I used a set with my array and .count in string interpolation to do everything in one step.
